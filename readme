@@ -1,0 +1,7 @@
+mkdir -p ${WORKSPACE}/${ENVIRONMENT}
+cp ${WORKSPACE}/environment/${ENVIRONMENT}.yaml ${WORKSPACE}/${ENVIRONMENT}/
+ansible-playbook ${WORKSPACE}/playbooks/build_hosts_inventory.yaml --extra-vars "environment_name=${ENVIRONMENT} ansbile_dir=${WORKSPACE}/${ENVIRONMENT}"
+
+ansible-playbook ${WORKSPACE}/playbooks/prerequisites.yaml -i ${WORKSPACE}/${ENVIRONMENT}/inventory.txt --extra-vars "environment_name=${ENVIRONMENT}"
+
+ansible-playbook ${WORKSPACE}/playbooks//install.yaml -i ${WORKSPACE}/${ENVIRONMENT}/inventory.txt --extra-vars "environment_name=${ENVIRONMENT} ansible_dir=${WORKSPACE}/${ENVIRONMENT} scripts_dir=${WORKSPACE}/automate"

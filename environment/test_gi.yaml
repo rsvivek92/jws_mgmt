@@ -1,4 +1,4 @@
-environment_name: poc_gi
+environment_name: test_gi
 tomcat_instances:
   - instanceName: tomcat_instance1
     instanceLoc: /tmp/tomcat_instance1
