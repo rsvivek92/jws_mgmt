@@ -1,6 +1,7 @@
 -
   name: HostsInventoryBuild
   hosts: '{{ environment_name }}'
+  user: ec2-user
   tasks:
     - name: Test connectivity to remote hosts
       ping:
