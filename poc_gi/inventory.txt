@@ -1,0 +1,3 @@
+[poc_gi]
+ip-172-31-28-5.ec2.internal
+ip-172-31-24-176.ec2.internal

@@ -1,0 +1,8 @@
+-
+  name: HostsInventoryBuild
+  hosts: localhost
+  tasks:
+    - name: Build the hosts inventory file
+      shell: echo ['{{ environment_name }}'] > '{{ ansbile_dir }}'/inventory.txt
+    - name: Add the hosts file
+      shell: cat '{{ ansbile_dir }}/{{ environment_name }}.yaml' |grep instanceHost|cut -d ":" -f2|tr -s " "|cut -d " " -f2|uniq >> '{{ ansbile_dir }}'/inventory.txt

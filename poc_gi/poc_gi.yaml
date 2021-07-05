@@ -1,0 +1,14 @@
+environment_name: poc_gi
+tomcat_instances:
+  - instanceName: tomcat_instance1
+    instanceLoc: /tmp/tomcat_instance1
+    instanceHost: ip-172-31-28-5.ec2.internal
+  - instanceName: tomcat_instance2
+    instanceLoc: /tmp/tomcat_instance2
+    instanceHost: ip-172-31-28-5.ec2.internal
+  - instanceName: tomcat_instance3
+    instanceLoc: /tmp/tomcat_instance3
+    instanceHost: ip-172-31-24-176.ec2.internal
+  - instanceName: tomcat_instance4
+    instanceLoc: /tmp/tomcat_instance4
+    instanceHost: ip-172-31-24-176.ec2.internal

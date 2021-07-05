@@ -1,0 +1,6 @@
+-
+  name: HostsInventoryBuild
+  hosts: '{{ environment_name }}'
+  tasks:
+    - name: Test connectivity to remote hosts
+      ping:

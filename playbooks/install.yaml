@@ -1,0 +1,17 @@
+-
+  name: Begin Installation
+  hosts: '{{ environment_name }}'
+  vars_files:
+    - '{{ ansible_dir }}/{{ environment_name }}.yaml'
+  user: ec2-user
+  tasks:
+    - name: Transfer the script directory
+      copy: 'src={{ scripts_dir }} dest=/tmp mode=0755'
+      become: yes
+      become_user: tomcat
+    - name: Execute Script
+      shell: sh /tmp/automate/test.sh '{{ environment_name }}' '{{ item.instanceName }}' '{{ item.instanceLoc }}'
+      delegate_to: '{{ item.instanceHost }}'
+      become: yes
+      become_user: tomcat
+      loop: '{{ tomcat_instances }}'
